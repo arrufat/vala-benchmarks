@@ -1,0 +1,51 @@
+# vala-benchmarks Makefile header
+#
+# This file contains some global definitions
+# 
+
+# Customize this file for your system
+SHELL = /bin/sh
+
+# PATH
+GCC := /usr/bin/gcc
+GPP := /usr/bin/g++
+#VALAC := /usr/bin/valac
+VALAC := /opt/vala/bin/valac
+MONOC := /usr/bin/gmcs
+MONORUN := /usr/bin/mono
+TIME := /usr/bin/time -f "%e"
+# MEMORY := /usr/bin/time -f "%K"
+MEMORY := /bin/true # disable mem bench
+STRIP := /usr/bin/strip -s
+
+# Compiler Options
+GCCOPTS = -O3 -funroll-loops -ffast-math -fomit-frame-pointer \
+          -ftracer -lm -msse -msse2 -mfpmath=sse \
+          `pkg-config --cflags --libs gobject-2.0`
+GPPOPTS = -O3 -funroll-loops -ffast-math -fomit-frame-pointer \
+          -ftracer -lm -msse -msse2 -mfpmath=sse
+VALACOPTS = -C --disable-assert
+MONOCOPTS = 
+MONORUNOPTS = -O=all --aot
+
+# Benchmarks to make (same name as directories)
+BENCHS = mandelbrot partialSums recursive binaryTrees sumFile \
+	 fannkuch spectralNorm nsieve nBody #startup
+#BENCHS = binaryTrees
+LANGS = mono plain-C vala C++
+
+############################################################
+# we define a default rule to tell user what to do 
+# if they just randomly type "make" here.
+############################################################
+default:
+	@echo "No default rule, try:"
+	@echo "  make all       # do almost everything"
+	@echo "  make build     # Only build all the programs"
+	@echo "  make test      # Test the input-output for default value"
+	@echo "  make bench     # Make the defaults benchmarks"
+	@echo "  make clean     # remove generated/data files"
+
+.EXPORT_ALL_VARIABLES:
+.PHONY: test bench clean
+

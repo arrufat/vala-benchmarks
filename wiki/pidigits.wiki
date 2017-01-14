@@ -1,0 +1,19 @@
+#summary Streaming arbitrary-precision arithmetic N=2,500
+#labels Not-Planned
+
+= Rules =
+
+Each program should use the same step-by-step spigot algorithm to calculate digits of Pi.
+
+Each program should
+
+    * calculate the first N digits of Pi
+    * print the digits 10-to-a-line, with the running total of digits calculated
+
+Programs should adapt the step-by-step algorithm given on pages 4,6 & 7 of [http://web.comlab.ox.ac.uk/oucl/work/jeremy.gibbons/publications/spigot.pdf Unbounded Spigot Algorithms for the Digits of Pi] (156KB pdf). (Not the deliberately obscure version given on page 2.)(Not the Rabinowitz-Wagon algorithm.)
+
+In addition to language specific multiprecision arithmetic, we will accept programs that use [http://gmplib.org/ GMP].
+
+= Status =
+
+Not Planned. Need to implement part of [http://gmplib.org/ GMP].

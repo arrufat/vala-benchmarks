@@ -1,0 +1,9 @@
+# vala-benchmarks
+# fasta bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 1000
+NBENCH = 25000000
+
+# Generated file and test file name
+FILE = fasta-output.txt

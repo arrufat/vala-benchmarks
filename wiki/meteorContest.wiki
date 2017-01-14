@@ -1,0 +1,28 @@
+#summary Search for solutions to shape packing puzzle N=2,098
+#labels Not-Planned
+
+= Rules =
+
+The Meteor Puzzle board is made up of 10 rows of 5 hexagonal Cells. There are 10 puzzle pieces to be placed on the board, we'll number them 0 to 9. Each puzzle piece is made up of 5 hexagonal Cells. As different algorithms may be used to generate the puzzle solutions, we require that the solutions be printed in a standard order and format. Here's one approach - working along each row left to right, and down the board from top to bottom, take the number of the piece placed in each cell on the board, and create a string from all 50 numbers, for example the smallest puzzle solution would be represented by
+
+`00001222012661126155865558633348893448934747977799`
+
+Print the smallest and largest Meteor Puzzle 50 character solution string in this format to mimic the hexagonal puzzle board:
+
+{{{
+0 0 0 0 1 
+ 2 2 2 0 1 
+2 6 6 1 1 
+ 2 6 1 5 5 
+8 6 5 5 5 
+ 8 6 3 3 3 
+4 8 8 9 3 
+ 4 4 8 9 3 
+4 7 4 7 9 
+ 7 7 7 9 9 
+}}}
+The command line parameter N should limit how many solutions will be found before the program halts, so that you can work with just a few solutions to debug and optimize your program.
+
+= Status =
+
+Not Planned

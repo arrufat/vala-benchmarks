@@ -1,0 +1,46 @@
+#vala-benchmarks#
+A collections of some simples benchmarks written in [Vala] [1]. 
+
+##Intro##
+This project aims to implement ["The Computer Language Benchmarks Game"] [2] in
+Vala.
+
+[Vala] [1] is a new programming language that aims to bring modern programming 
+language features to GNOME developers without imposing any additional runtime 
+requirements and without using a different ABI compared to applications and 
+libraries written in C. The syntax of Vala is similar to C#, modified to better 
+fit the GObject type system.
+
+[1]: [http://live.gnome.org/Vala] "Vala"
+[2]: [http://shootout.alioth.debian.org] "The Computer Language Benchmarks Game"
+
+##From Vala FAQ##
+>    How does the performance of Vala applications compare to other 
+> applications?
+>
+>    The performance should be pretty similar to GObject/C-based code as 
+> there is no Vala-specific runtime library/environment that needs to be 
+> loaded. The C compiler can also apply the same optimizations on 
+> Vala-generated C code and plain GObject/C code. The Vala compiler uses 
+> reference counting in more places than most GObject/C-based 
+> applications do. However, Vala allows to fine-tune that easily in 
+> performance-critical sections with the weak modifier.
+
+##Please Help##
+If you want to help this project please visit the links:
+
+*	[Project Site] [3]
+*	[How to help] [4]
+*	[Benchs not planned] [5]
+
+[3]: [http://code.google.com/p/vala-benchmarks]
+[4]: [http://code.google.com/p/vala-benchmarks/wiki/HowTo]
+[5]: [http://code.google.com/p/vala-benchmarks/w/list?q=label:Not-Planned]
+
+##Run the benchmark##
+1. Edit Make.header to customize to your system
+2. Lanch ``make test`` to verify that all the benchs take the good results
+        or see only the test results ``make test |grep ">>"``
+3. Run the bench ``make bench``
+4. Edit bench-*.csv for the results and make some comments ;) .
+

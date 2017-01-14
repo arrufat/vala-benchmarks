@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/210/trunk/mandelbrot
+END
+info.txt
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/147/trunk/mandelbrot/info.txt
+END
+mandelbrot-output.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/91/trunk/mandelbrot/mandelbrot-output.txt
+END
+spectralnorm-output.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/128/trunk/mandelbrot/spectralnorm-output.txt
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/221/trunk/recursive
+END
+info.txt
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/147/trunk/recursive/info.txt
+END
+recursive-output.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/100/trunk/recursive/recursive-output.txt
+END

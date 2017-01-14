@@ -1,0 +1,70 @@
+#set COLORLIST = red,yellow,blue,green,orange,pink,black,white
+
+// added scg 8/4/04.. allows spaces to be represented using underscores..
+#proc settings
+  encodenames: yes
+
+#proc page
+pagesize: 7 5
+#if @DEVICE in gif,png
+  scale: 1
+#endif
+
+#proc getdata
+fieldnameheader: yes
+#intrailer	// get data from end of this file
+#endproc   //necessary in order to do the following computation involving NRECORDS
+
+// compute XMAX (number of records+1 for bar graphs)
+#set XMAX = $arith(@NRECORDS+1)  
+
+// set up area
+#proc areadef
+title: Size Results
+rectangle: 1 1 6 4
+yrange: 0 @XMAX
+xrange: 0 7000  // no way currently to do autorange on variable # of fields
+yaxis.stubs: datafield=1
+yaxis.label: 
+xaxis.stubs: inc 500
+xaxis.label: Size(GZbytes)
+
+// initialize loop variables
+#set I = 2
+#set NCLUST = $arith(@NFIELDS-2)
+
+// start loop
+#loop
+
+  // set vars for this iteration
+  #set FNAME = $fieldname(@I)   // this function is new
+  #set ICLUST = $arith(@I-1)
+  #set COLOR = $nmember(@ICLUST,@COLORLIST)
+
+  // do bars
+  #proc bars
+  horizontalbars: yes
+  lenfield: @I
+  cluster: @ICLUST / @NCLUST
+  color: @COLOR
+#hideund
+  legendlabel: @FNAME
+#showund
+  barwidth: 0.05
+
+  // update I and see if time to stop..
+  #set I = $arith(@I+1)
+  #if @I > @NFIELDS
+    #break
+  #endif
+#endloop
+
+// slap on the legend
+#proc legend
+format: singleline
+location: 3 0.5
+sep: 0.5
+
+// here's the data
+#proc trailer
+data

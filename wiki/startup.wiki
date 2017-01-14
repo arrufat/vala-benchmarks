@@ -1,0 +1,15 @@
+#summary Measure 'hello world' program startup time
+#labels Complete
+
+= Rules =
+
+Each program should print "hello world" and exit.
+
+This benchmark measures startup costs. It is run differently than the others - each program is run N times in a loop by a shell script wrapper. We show the mean CPU time. Most hello world programs are too fast for [http://shootout.alioth.debian.org/gp4/faq.php#memory the way we measure memory usage] so we only show CPU time.
+
+= Status =
+
+Complete
+
+= Source =
+[http://vala-benchmarks.googlecode.com/svn/trunk/startup/hello.vala Plain Source]

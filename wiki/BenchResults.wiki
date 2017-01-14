@@ -1,0 +1,67 @@
+#summary Results of the current completed benchs.
+#labels Featured,Documentation
+
+The generated results can be found on the on the SVN :
+*  [http://vala-benchmarks.googlecode.com/svn/trunk/bench-time.csv Time bench]
+*  [http://vala-benchmarks.googlecode.com/svn/trunk/bench-size.csv Size bench]
+
+= Versions =
+
+  == mono --version : ==
+{{{
+Mono C# compiler version 2.4.2.3
+}}}
+
+  == gcc -v : ==
+{{{
+gcc (Debian 4.3.4-2) 4.3.4
+}}}
+
+  == valac --version : ==
+{{{
+Vala 0.7.6
+}}}
+
+
+= Time results = 
+
+http://vala-benchmarks.googlecode.com/svn/trunk/bench-time.svg
+
+||BenchName||C++||Mono||plain-C||Vala||
+||mandelbrot||14.48||47.40||12.38||13.05||
+||partialSums||32.68||56.58||35.11||34.92||
+||recursive||12.87||28.15||8.38||8.61||
+||binaryTrees||27.53||42.62||21.56||30.75||
+||sumFile||16.90||23.70||14.18||15.24||
+||fannkuch||11.18||26.59||12.26||14.23||
+||spectralNorm||32.77||46.58||32.83||36.84||
+||nsieve||25.49||29.31||26.09||25.70||
+||nBody||28.33||43.55||26.02||28.06||
+
+= Size results =
+
+http://vala-benchmarks.googlecode.com/svn/trunk/bench-size.svg
+
+||BenchName||C++||Mono||plain-C||Vala||
+||mandelbrot||4394||1284||2270||2590||
+||partialSums||2997||1416||5703||6151||
+||recursive||6334||1410||5610||6036||
+||binaryTrees||5555||1463||4570||5994||
+||sumFile||2634||1090||1883||3913||
+||fannkuch||5924||1389||4359||7163||
+||spectralNorm||6279||1420||3927||5604||
+||nsieve||2681||1173||2013||3919||
+||nBody||6061||2199||3710||4986||
+
+= Memory consumed results =
+
+The method of memory measurement is pretty simple :
+{{{
+time --format=%M
+
+    %M :    Maximum resident set  size  of  the  process
+            during its lifetime, in Kilobytes.
+}}}
+The project's goal is to become part of "The Computer Language Benchmarks Game", not to implement complex memory measurement systems :).
+
+_due to the time command bug, these results are not available_

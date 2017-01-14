@@ -1,0 +1,10 @@
+# vala-benchmarks
+# nBody bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 1000
+NBENCH = 20000000
+
+# Generated file and test file name
+FILE = nbody-output.txt
+

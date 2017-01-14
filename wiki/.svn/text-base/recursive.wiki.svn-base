@@ -1,0 +1,31 @@
+#summary Naive recursive-algorithms: ack fib tak N=12
+#labels Complete
+
+= Rules =
+
+Each program should use the same naïve recursive-algorithms to calculate 3 simple numeric functions: ackermann, fibonnaci and tak.
+{{{
+Ack(x,y)
+  x = 0     = y+1
+  y = 0     = Ack(x-1,1)
+  otherwise = Ack(x-1, Ack(x,y-1))
+
+Fib(n)
+  n < 2     = 1
+  otherwise = Fib(n-2) + Fib(n-1)
+
+Tak(x,y,z)
+  y < x     = Tak(Tak(x-1.0,y,z),Tak(y-1.0,z,x),Tak(z-1.0,x,y))
+  otherwise = z
+}}}
+
+For this benchmark, the fibonnaci and tak implementations should either provide separate functions - one for integer calculation and one for double calculation - or provide a function that uses integer calculation with integer parameters and double calculation with double parameters.
+
+
+= Status =
+
+Fully complete 
+
+= Source =
+
+[http://vala-benchmarks.googlecode.com/svn/trunk/recursive/recursive.vala Plain Source]

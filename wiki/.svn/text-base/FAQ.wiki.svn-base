@@ -1,0 +1,25 @@
+#summary The place where all questions have a response.
+#labels Featured
+
+=== Have you planned to add other platforms/environments ? ===
+
+By this time NO, all the tests are automatic and support other OS will break this easy way.
+
+Using Mingw based binaries may also introduce false results (using cygwin will probably moreover change the results). Furthermore all the tools I use to perform automatic rendering are Unix based (look at bench.sh).
+
+If you want you can take the C# file and make a MS VS project. I will pleasely add it to the bench (out of the automatic way).
+
+=== Can you add the XXX language ? ===
+
+By now, it's not my priority to add others languages, I prefer complete all the benchmarks.
+
+If you want compare others, you can take a reference and make your own benchmark at [http://shootout.alioth.debian.org The Computer Language Benchmarks Game].
+
+=== Why the Vala language is not supported by [http://shootout.alioth.debian.org The Computer Language Benchmarks Game] ? ===
+
+I have asked this question on their forum and the final answer is :
+
+You're already doing a nice job of showing benchmark measurements. Vala seems to be a new unused language, there are a lot of those and we don't show them.
+
+
+[http://alioth.debian.org/forum/forum.php?thread_id=3619&forum_id=999 See the full topic]

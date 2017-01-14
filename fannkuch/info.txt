@@ -1,0 +1,9 @@
+# vala-benchmarks
+# fannkuch bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 7
+NBENCH = 11
+
+# Generated file and test file name
+FILE = fannkuch-output.txt

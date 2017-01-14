@@ -1,0 +1,38 @@
+#summary What is the compiler optimizations turned ON
+#labels Documentation
+
+= Introduction =
+
+This document describe what is the GCC and Mono:Runtime options used in this benchmark. For Mono:Runtime, we use the Ahead-of-Time compiler which make the comparison more precise (as the JIT add some overhead).
+
+We try to use the same optimizations in all the programs but it's fairly difficult, please discuss the options on the Comment Section.
+
+
+= GCC options =
+
+First of all, the plain-C sources are not exactly like on the [http://shootout.alioth.debian.org/ "The Computer Language Benchmarks Game"]. We prefer using standard C code and not especially SSE2-SSE3 hardcoded instructions, the compiler *must* do the optimizations.
+
+As explain above, GCC must do *all the optimizations*. For more informations, read these links :
+  * [http://gcc.gnu.org/projects/tree-ssa/vectorization.html Auto-vectorization in GCC]
+  * [http://www.network-theory.co.uk/docs/gccintro/gccintro_49.html An Introduction to GCC - 6.4 Optimization levels]
+  * [http://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html Using the Gnu Compiler Collection - 3.10 Options That Control Optimization]
+
+We use a command line like :
+{{{
+   gcc -O3 -funroll-loops -ffast-math -fomit-frame-pointer \
+         -pipe -ftree-vectorize -fvect-cost-model -ftracer \
+         `pkg-config --cflags --libs glib-2.0` program.c -o program 
+}}}
+
+NOTE : The pkg-config options doesn't add running overhead for plain-C.
+
+
+= Mono options =
+
+As written on [http://www.mono-project.com/CSharp_Compiler#CIL_Optimizations. the Mono website], the C# compiler doesn't make any advanced optimizations, it try to conserve a generic CLI code.
+
+The Mono:Runtime (CLI) make the optimizations especially in the [http://www.mono-project.com/Mono:Runtime#Ahead-of-time_compilation Ahead-of-Time] mode.
+
+So we use a command line like to compile:
+   * Compilation : {{{ mcs program.cs }}}
+   * Mono:Runtime : {{{ mono -O=all --aot program.exe }}}

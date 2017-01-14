@@ -1,0 +1,12 @@
+# vala-benchmarks
+# sumFile bench information 
+
+# Generated file and test file name
+OUTFILE = sumcol-output.txt
+INTESTFILE = sumcol-input.txt
+
+# Bench filename
+# The bench is just a 420-repeat of the test
+INFILE = sumcol-full-input.txt
+GZINFILE = sumcol-full-input.txt.gz
+

@@ -1,0 +1,9 @@
+# vala-benchmarks
+# partialSums bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 25000
+NBENCH = 25000000
+
+# Generated file and test file name
+FILE = partialsums-output.txt

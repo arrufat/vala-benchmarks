@@ -1,0 +1,9 @@
+# vala-benchmarks
+# mandelbrot bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 200
+NBENCH = 5500
+
+# Generated file and test file name
+FILE = mandelbrot-output.txt

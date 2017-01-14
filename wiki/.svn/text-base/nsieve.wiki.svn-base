@@ -1,0 +1,21 @@
+#summary Indexed-access to boolean-sequence N=14
+#labels Complete
+
+= Rules =
+
+Each program should count the prime numbers from 2 to M, using the same naïve Sieve of Eratosthenes algorithm:
+
+    * create a sequence of M boolean flags (don't use bit flags - if the language implementation doesn't provide a boolean type or if the boolean type is packed then use byte flags)
+    * for each index number
+          * if the flag value at that index is true
+                * set all the flag values at multiples of that index false
+                * increment the count
+
+Calculate 3 prime counts, for M = 2N × 10000, 2N-1 × 10000, and 2N-2 × 10000.
+
+The basic benchmark was described in "A High-Level Language Benchmark." BYTE, September 1981, p. 180, Jim Gilbreath.
+
+
+= Status =
+
+Complete

@@ -1,0 +1,32 @@
+#summary Naive iterative summation: power sin cos N=2,500,000
+#labels Complete
+
+= Rules =
+
+Each program should use the same naïve iterative double-precision algorithms to calculate partial-sums of the series:
+
+∑ (²⁄3)k k=0, … use power function
+
+∑ k−0.5 k=1, … use power or sqrt function
+
+∑ ¹⁄k(k+1)
+
+∑ ¹⁄k³(sin k)²
+
+∑ ¹⁄k³(cos k)²
+
+∑ ¹⁄k
+
+∑ ¹⁄k²
+
+∑ −1k+1⁄k
+
+∑ −1k+1⁄2k −1
+
+= Status =
+
+Complete
+
+= Source =
+
+[http://vala-benchmarks.googlecode.com/svn/trunk/partialSums/partialsums.vala Plain Source]

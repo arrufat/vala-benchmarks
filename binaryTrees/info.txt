@@ -1,0 +1,10 @@
+# vala-benchmarks
+# binaryTrees bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 10
+NBENCH = 18
+#NBENCH = 15
+
+# Generated file and test file name
+FILE = binarytrees-output.txt

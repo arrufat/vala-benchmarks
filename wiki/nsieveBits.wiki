@@ -1,0 +1,19 @@
+#summary Indexed-access to bit-values N=11
+#labels Not-Planned
+
+= Rules =
+Each program should count the prime numbers from 2 to M, using the same naïve Sieve of Eratosthenes algorithm:
+
+    * create an array of M bit flags which represent either prime or not-prime
+    * for each index number
+          o test the flag value at that index
+                + set or clear the flag values at multiples of that index as necessary
+                + if necessary keep and increment a separate count
+
+Calculate 3 prime counts, for M = 2N × 10000, 2N-1 × 10000, and 2N-2 × 10000.
+
+A variation on the [nsieve] benchmark with 2 differences - bit flags are used and it's acceptable to test the bit value and only flip values that need to be changed.
+
+= Status =
+
+Not Planned

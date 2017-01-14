@@ -1,0 +1,18 @@
+vala-benchmarks 0.3.0
+=====================
+* make test works as expected
+* svg is generated
+
+vala-benchmarks 0.1.8
+=====================
+ * Adding C++
+ * Update ploticus files
+
+vala-benchmarks 0.0.8
+=====================
+ * 8 benchmarks complete
+
+vala-benchmarks 0.0.1
+=====================
+
+ * Initial release.

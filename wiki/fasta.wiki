@@ -1,0 +1,27 @@
+#summary Generate and write random DNA sequences N=25,000,000
+#labels Planned
+
+= Rules =
+
+Each program should
+
+    * encode the expected cumulative probabilities for 2 alphabets
+    * generate DNA sequences, by weighted random selection from the alphabets, using this linear congruential generator
+{{{
+      IM = 139968
+      IA = 3877
+      IC = 29573
+      Seed = 42
+
+      Random (Max)
+         Seed = (Seed * IA + IC) modulo IM
+         = Max * Seed / IM
+}}}
+    * generate DNA sequences, by copying from a given sequence
+    * write 3 sequences line-by-line in FASTA format
+
+We'll use the generated FASTA file as input for other benchmarks ([reverseComplement], [kNucleotide]).
+
+
+= Status =
+Planned (needed by [reverseComplement] and [kNucleotide]).

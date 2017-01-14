@@ -1,0 +1,9 @@
+# vala-benchmarks
+# recursive bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 3
+NBENCH = 12
+
+# Generated file and test file name
+FILE = recursive-output.txt

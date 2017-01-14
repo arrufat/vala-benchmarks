@@ -1,0 +1,13 @@
+#summary Double-precision N-body simulation N=20,000,000
+#labels Complete
+
+= Rules =
+
+Each program should model the orbits of Jovian planets, using the same simple symplectic-integrator - see the [http://shootout.alioth.debian.org/gp4/benchmark.php?test=nbody&lang=java&sort=fullcpu Java program].
+
+For background information see N-body problem. Useful symplectic integrators are freely available, for example the [http://janus.astro.umd.edu/HNBody/ HNBody Symplectic Integration Package].
+
+
+= Status =
+
+Complete but need optimizations.

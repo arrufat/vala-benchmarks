@@ -1,0 +1,54 @@
+#summary Describe how to help the project
+#labels Documentation
+
+= Organization =
+
+This wiki use one page per benchmark. The name is the same as in [http://shootout.alioth.debian.org/gp4/benchmark.php?test=all&lang=gcc&lang2=gpp shootout page] except that we transform `foo-bar` in `fooBar`.
+
+
+= Discussion =
+
+To discuss an implementation of a bench, use the comment. There is at this time no Mailing List to discuss. Use the Vala charoom [irc://irc.gimp.org/#vala] if you want.
+
+= For Developers =
+
+== General informations ==
+*How to find work ?*
+    Search the wiki with :
+        * Tag := Featured
+        * Words := "Not Planned"
+    or click [http://code.google.com/p/vala-benchmarks/w/list?q=label:Not-Planned here]
+
+If you want to complete some benchmarks :
+    # look at the full rules on http://shootout.alioth.debian.org
+    # write code
+    # diff the output with a reference gived at http://shootout.alioth.debian.org
+    # mail me a version and I will give you a SVN access.
+
+== Program coding rules ==
+The program must be clear and concise. It must return an integer for the status. Please abuse of the documentation.
+
+Conserve the Makefile structure which is really simple to understand :
+  * build : build all the test
+  * test : diff the output with a [http://shootout.alioth.debian.org/gp4/benchmark.php?test=mandelbrot&lang=all#about standard output]
+  * bench : take the benchmark
+
+Exemple :
+{{{
+vala-benchmarks -> mandelbrot -> mono    -> Makefile
+                                         -> mandelbrot.cs
+
+                              -> plain-C -> Makefile
+                                         -> mandelbrot.c
+
+                              -> vala    -> Makefile
+                                         -> mandelbrot.vala
+
+                              -> info.txt (Generic bench var.)
+                              -> output.txt (ref. file)
+
+                -> ...
+
+                -> Makefile
+                -> Make.header (Generic options)
+}}}

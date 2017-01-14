@@ -1,0 +1,9 @@
+# vala-benchmarks
+# spectralNorm bench information 
+
+# Numbers used in the Test and Benchmark
+NTEST = 100
+NBENCH = 5000
+
+# Generated file and test file name
+FILE = spectralnorm-output.txt

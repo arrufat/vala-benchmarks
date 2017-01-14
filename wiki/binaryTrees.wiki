@@ -1,0 +1,26 @@
+#summary Allocate and deallocate many many binary trees N=17
+#labels Complete
+
+= Rules =
+Each program should
+
+    * define a tree node class and methods, a tree node record and procedures, or an algebraic data type and functions, or…
+    * allocate a binary tree to 'stretch' memory, check it exists, and deallocate it
+    * allocate a long-lived binary tree which will live-on while other trees are allocated and deallocated
+    * allocate, walk, and deallocate many bottom-up binary trees
+          * allocate a tree
+          * walk the tree nodes, checksum node items (and maybe deallocate the node)
+          * deallocate the tree
+    * check that the long-lived binary tree still exists
+
+Note: this is an adaptation of a benchmark for testing GC so we are interested in the whole tree being allocated before any nodes are GC'd - which probably excludes lazy evaluation.
+
+Note: the left subtrees are heads of the right subtrees, keeping a depth counter in the accessors to avoid duplication is cheating!
+
+Note: the tree should have tree-nodes all the way down, replacing the bottom nodes by some other value is not acceptable; and the bottom nodes should be at depth 0.
+
+There are reference implementations in OCaml, C#, and PHP.
+
+= Status =
+
+Complete
