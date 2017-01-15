@@ -9,7 +9,7 @@ public class Mandelbrot : Object {
 
 	public static int main(string[] args) {
 	
-		int width = (args.length > 0)?args[1].to_int():100;
+		int width = (args.length > 0) ? int.parse (args[1]) : 100;
 		
 		int height = width;
 		int i;

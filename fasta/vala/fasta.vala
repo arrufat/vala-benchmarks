@@ -12,7 +12,7 @@ public class Fasta : Object {
 		Fasta.MakeCumulative (HomoSapiens);
 		Fasta.MakeCumulative (IUB);
 		
-		int n = (args.length > 0)?args[1].to_int():1000;
+		int n = (args.length > 0) ? int.parse (args[1]) : 1000;
 		
 		Fasta.MakeRepeatFasta ("ONE", "Homo sapiens alu", ALU.skip, n*2);
 		Fasta.MakeRandomFasta ("TWO", "IUB ambiguity codes", IUB, n*3);

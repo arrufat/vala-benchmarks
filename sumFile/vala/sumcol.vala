@@ -16,7 +16,7 @@ public class SumCol {
 		
 		while(stdin.gets(str) != null)
 		{
-			sum += ((string)str).to_int();
+			sum += int.parse ((string) str);
 		}
 		
 		stdout.printf("%d\n",sum);

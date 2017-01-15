@@ -67,7 +67,7 @@ class Fannkuch
    }
 
 	public static int main(string[] args){
-		int n = (args.length > 0)?args[1].to_int():7;
+		int n = (args.length > 0) ? int.parse (args[1]) : 7;
 		
 		stdout.printf("Pfannkuchen(%d) = %d\n", n, fannkuch(n));
 

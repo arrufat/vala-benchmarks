@@ -8,7 +8,7 @@ using GLib;
 class SpectralNorm
 {
    public static int main(string[] args) {        
-      int n = (args.length > 0)?args[1].to_int():100;
+      int n = (args.length > 0) ? int.parse (args[1]) : 100;
 
       stdout.printf("%0.9f\n", Approximate(n));
       return 0;

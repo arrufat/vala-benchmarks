@@ -8,7 +8,7 @@ using GLib;
 public class Recursive : Object {
 	static int main (string[] args)
 	{
-		int n = args[1].to_int();
+		int n = int.parse (args[1]);
 		
 		stdout.printf("Ack(3,%d): %d\n", n, ack(3, n));
 		stdout.printf("Fib(%.1f): %.1f\n", 27.0+n, fibFP(27.0+n));

@@ -12,7 +12,7 @@ public class BinaryTrees {
 	
 	public static int main(string[] args)
 	{
-		int n = (args.length > 0)?args[1].to_int():0;
+		int n = (args.length > 0) ? int.parse (args[1]) : 0;
 		
 		int maxDepth = (minDepth + 2 > n)?minDepth +2:n;
 		int stretchDepth = maxDepth + 1;

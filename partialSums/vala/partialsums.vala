@@ -11,7 +11,7 @@ public class PartialSums : Object {
 	
 	public static int main(string[] args)
 	{
-		int n = args[1].to_int();
+		int n = int.parse (args[1]);
 		int k;
 		
 		double sum;

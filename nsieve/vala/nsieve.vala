@@ -10,7 +10,7 @@ class NSieve {
 	
 	static int main(string[] args) {
 		
-		int m = args[1].to_int();	
+		int m = int.parse (args[1]);
 		
 		for (int i = 0; i < 3; i++)
 	        	nsieve(10000 << (m-i));

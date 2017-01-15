@@ -7,7 +7,7 @@ using GLib;
 
 public class NBody : Object {
    public static int main(string[] args) {
-      int n = (args.length > 0)?args[1].to_int():10000;
+      int n = (args.length > 0) ? int.parse (args[1]) : 10000;
 
       NBodySystem bodies = new NBodySystem();
 

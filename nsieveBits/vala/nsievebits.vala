@@ -9,7 +9,7 @@ public class nsieveBits {
 
 	static int main(string[] args) {
 		
-		int n = args[1].to_int();
+		int n = int.parse (args[1]);
 		
 		uint32 count1 = 0;
 		uint32 count2 = 0;
