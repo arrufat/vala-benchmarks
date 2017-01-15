@@ -10,7 +10,7 @@ for dir in $*
 do	
 	echo $dir';'$(cat `find ./$dir/ |sort -d |grep time.csv` |tr '\n' ';' |sed 's/;$//') >> bench-time.csv
 	echo $dir';'$(cat `find ./$dir/ |sort -d |grep size.csv` |tr '\n' ';' |sed 's/;$//') >> bench-size.csv
-	# echo $dir';'$(cat `find ./$dir/ |sort -d |grep mem.csv` |tr '\n' ';' |sed 's/;$//') >> bench-mem.csv
+	echo $dir';'$(cat `find ./$dir/ |sort -d |grep mem.csv` |tr '\n' ';' |sed 's/;$//') >> bench-mem.csv
 done;
 
 # (warning: just a note)
@@ -23,13 +23,20 @@ done;
 #
 cp ploticus-time.tmpl template
 sed 's/;/\t/g;s/^\(.*\)$/\1\t/' bench-time.csv >> template
-ploticus -svg -o bench-time.svg template
-ploticus -png -o bench-time.png template
+pl -svg -o bench-time.svg template
+pl -png -o bench-time.png template
 rm template
 #
 cp ploticus-size.tmpl template
 sed 's/;/\t/g;s/^\(.*\)$/\1\t/' bench-size.csv >> template
-ploticus -svg -o bench-size.svg template
-ploticus -png -o bench-size.png template
+pl -svg -o bench-size.svg template
+pl -png -o bench-size.png template
+rm template
+#
+#
+cp ploticus-mem.tmpl template
+sed 's/;/\t/g;s/^\(.*\)$/\1\t/' bench-mem.csv >> template
+pl -svg -o bench-mem.svg template
+pl -png -o bench-mem.png template
 rm template
 #

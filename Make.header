@@ -9,13 +9,12 @@ SHELL = /bin/sh
 # PATH
 GCC := /usr/bin/gcc
 GPP := /usr/bin/g++
-#VALAC := /usr/bin/valac
-VALAC := /opt/vala/bin/valac
-MONOC := /usr/bin/gmcs
+VALAC := /usr/bin/valac
+MONOC := /usr/bin/mcs
 MONORUN := /usr/bin/mono
 TIME := /usr/bin/time -f "%e"
-# MEMORY := /usr/bin/time -f "%K"
-MEMORY := /bin/true # disable mem bench
+MEMORY := /usr/bin/time -f "%M"
+# MEMORY := /bin/true # disable mem bench
 STRIP := /usr/bin/strip -s
 
 # Compiler Options
@@ -23,15 +22,14 @@ GCCOPTS = -O3 -funroll-loops -ffast-math -fomit-frame-pointer \
           -ftracer -lm -msse -msse2 -mfpmath=sse \
           `pkg-config --cflags --libs gobject-2.0`
 GPPOPTS = -O3 -funroll-loops -ffast-math -fomit-frame-pointer \
-          -ftracer -lm -msse -msse2 -mfpmath=sse
+          -ftracer -lm -msse -msse2 -mfpmath=sse -fpermissive
 VALACOPTS = -C --disable-assert
-MONOCOPTS = 
+MONOCOPTS =
 MONORUNOPTS = -O=all --aot
 
 # Benchmarks to make (same name as directories)
-BENCHS = mandelbrot partialSums recursive binaryTrees sumFile \
-	 fannkuch spectralNorm nsieve nBody #startup
-#BENCHS = binaryTrees
+# TODO: fasta, nsieveBits
+BENCHS = binaryTrees fannkuch mandelbrot nBody nsieve partialSums recursive spectralNorm sumFile
 LANGS = mono plain-C vala C++
 
 ############################################################
@@ -48,4 +46,3 @@ default:
 
 .EXPORT_ALL_VARIABLES:
 .PHONY: test bench clean
-
