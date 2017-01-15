@@ -7,7 +7,7 @@ I just took that repository and made it work on my machine.
 ## Results
 
 ![time results](bench-time.png)
-![memory results](bench-memory.png)
+![memory results](bench-mem.png)
 ![size results](bench-size.png)
 
 
